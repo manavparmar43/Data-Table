@@ -1,0 +1,114 @@
+<!doctype html>
+{% load static  %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   
+  
+
+  </head>
+  <body>
+    <hr style="border:2px solid red;">
+    <marquee ><h1 >All Data Table</h1></marquee>
+    <hr style="border:2px solid red;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary container" style="border-radius:8px; height:80px">
+      <div class="container">
+        
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" onclick='Homepagination()'>Home</a>
+            </li>
+            
+            <select onchange='range_page()' class="selectpicker" id='range' style="height:38px; width:160px; border-radius:8px"   >
+            
+              <option class="text-center" id='rangedatas'>Range of data</option>
+              <option class="text-center">50</option>
+              <option class="text-center">60</option>
+              <option class="text-center">100</option>
+              <option class="text-center">150</option>
+              
+          
+            </select>
+            
+          </ul>
+          
+          <select  id='filterdata' class="selectpicker" style="height:38px; width:160px; border-radius:8px" onchange='filter()' >
+            
+              <option class="text-center" id='filterdatas'>Filter Data</option>
+              <option class="text-center">Age</option>
+              <option class="text-center">Sex</option>
+              <option class="text-center">Job</option>
+              <option class="text-center">Housing</option>
+              <option class="text-center">Saving accounts</option>
+              <option class="text-center">Checking account</option>
+              <option class="text-center">Credit amount</option>
+              <option class="text-center">Duration</option>
+              <option class="text-center">Purpose</option>
+              
+          
+          </select>&nbsp;&nbsp;&nbsp;
+          
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Enter the data" aria-label="Search" id='serching'>
+            
+          </form>
+          
+        </div>
+      </div>
+      
+    </nav><br>
+    <nav id='valnav' class="navbar navbar-expand-lg bg-light container " style='border-radius:8px; border:3px solid black'>
+      <div class="container-fluid">
+       
+        
+        <div class="collapse navbar-collapse justify-content-center" id="navbarText">
+          
+          <span class="navbar-text ">
+            <h3 id='validation' style='color:black;'>HELLO</h3>
+          </span>
+        </div>
+      </div>
+    </nav><br>
+  
+    <table class="table  container" style='border:2px solid rgba(50, 115, 220, 0.3); box-shadow: 0 0 10px 5px;  border-radius: 8px 8px;'>
+      <thead class='table-active' >
+        <tr>
+          <th scope="col"class='text-center header' >No</th>
+          <th scope="col" class='text-center header' id='age' data-order='asec'>Age</th>
+          <th scope="col" class='text-center header' id='sex' data-order='asec' >Sex</th>
+          <th scope="col" class='text-center header' id='job' data-order='asec' >Job</th>
+          <th scope="col" class='text-center header' id='housing' data-order='asec' >Housing</th>
+          <th scope="col" class='text-center header' id='savingaccounts' data-order='asec' >Saving accounts</th>
+          <th scope="col" class='text-center header' id='checkingaccount' data-order='asec' >Checking account</th>
+          <th scope="col" class='text-center header'  id='creditamount' data-order='asec'>Credit amount</th>
+          <th scope="col" class='text-center header' id='duration' data-order='asec' >Duration</th>
+          <th scope="col" class='text-center header' id='purpose' data-order='asec' >Purpose</th>
+          
+        </tr>
+      </thead>
+      <tbody id='rowdata' >
+        
+      
+      </tbody>
+    </table><br><br>
+
+    <nav aria-label="Page navigation example container"  >
+      <ul class="pagination justify-content-center" id='page' >
+        
+        
+        
+        
+      </ul>
+    </nav>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script defer type="text/javascript" src='{%static "js/jquery-3.6.0.min.js"%}'></script>
+    <script defer type="text/javascript" src='{%static "js/db.js"%}'></script>
+  </body>
+</html>
